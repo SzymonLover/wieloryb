@@ -1,6 +1,6 @@
 #wielordyp el projecto
 def display_board(board):
-    blankBoard="""
+    Plansza="""
 |-----------------------------|
 |         |         |         |
 |    7    |    8    |    9    |
@@ -18,10 +18,10 @@ def display_board(board):
 
     for i in range(1,10):
         if (board[i] == 'O' or board[i] == 'X'):
-            blankBoard = blankBoard.replace(str(i), board[i])
+            Plansza = Plansza.replace(str(i), board[i])
         else:
-            blankBoard = blankBoard.replace(str(i), ' ')
-    print(blankBoard)
+            Plansza = Plansza.replace(str(i), ' ')
+    print(Plansza)
 
 def player_input():
     player1 = input("Wybierz 'X' lub 'O' ")
