@@ -23,18 +23,18 @@ ___________________
     print(blankBoard)
 
 def player_input():
-    player1 = input("Please pick a marker 'X' or 'O' ")
+    player1 = input("Wybierz 'X' lub 'O' ")
     while True:
         if player1.upper() == 'X':
             player2='O'
-            print("You've choosen " + player1 + ". Player 2 will be " + player2)
+            print("Wybrales " + player1 + ". Drugi gracz bedzie " + player2)
             return player1.upper(),player2
         elif player1.upper() == 'O':
             player2='X'
-            print("You've choosen " + player1 + ". Player 2 will be " + player2)
+            print("Wybrales " + player1 + ". Drugi gracz bedzie " + player2)
             return player1.upper(),player2
         else:
-            player1 = input("Please pick a marker 'X' or 'O' ")
+            player1 = input("Wybierz 'X' or 'O' ")
 
 def place_marker(board, marker, position):
     board[position] = marker
@@ -66,20 +66,20 @@ def win_check(board, mark):
     return False
 
 def player_choice(board):
-    choice = input("Please select an empty space between 1 and 9 : ")
+    choice = input("Wybierz puste pole od 1 do 9 (od dolu do gory) : ")
     while not space_check(board, int(choice)):
-        choice = input("This space isn't free. Please choose between 1 and 9 : ")
+        choice = input("To miejsce jest zajete : ")
     return choice
 
 def replay():
-    playAgain = input("Do you want to play again (y/n) ? ")
-    if playAgain.lower() == 'y':
+    playAgain = input("Chcesz grac jeszcze raz? (t/n) ? ")
+    if playAgain.lower() == 't':
         return True
     if playAgain.lower() == 'n':
         return False
 
 if __name__ == "__main__":
-    print('Welcome to Tic Tac Toe!')
+    print('Kolko i Krzyzyk')
     i = 1
     # Choose your side
     players=player_input()
