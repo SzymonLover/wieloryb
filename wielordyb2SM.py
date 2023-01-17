@@ -66,6 +66,7 @@ def win_check(board, mark):
     if board[3] == board[5] == board[7] == mark:
         return True
     return False
+    #sprawdzeniewygraej
 
 def player_choice(board):
     choice = input("Wybierz puste pole od 1 do 9 (od dolu do gory) : ")
@@ -83,35 +84,29 @@ def replay():
 if __name__ == "__main__":
     print('Kolko i Krzyzyk')
     i = 1
-    # Choose your side
     players=player_input()
-    # Empty board init
+    #tablica
     board = ['#'] * 10
     while True:
-        # Set the game up here
+        #start
         game_on=full_board_check(board)
         while not game_on:
-            # Player to choose where to put the mark
             position = player_choice(board)
-            # Who's playin ?
             if i % 2 == 0:
                 marker = players[1]
             else:
                 marker = players[0]
-            # Play !
             place_marker(board, marker, int(position))
-            # Check the board
+            #Sprawdzenie
             display_board(board)
             i += 1
             if win_check(board, marker):
-                print("You won !")
+                print("Wygrales!")
                 break
             game_on=full_board_check(board)
         if not replay():
             break
         else:
             i = 1
-            # Choose your side
             players=player_input()
-            # Empty board init
             board = ['#'] * 10
