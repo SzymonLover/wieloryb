@@ -1,3 +1,5 @@
+#wielordyp el projecto
+
 def display_board(board):
     blankBoard="""
 |-----------------------|
